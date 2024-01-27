@@ -6,7 +6,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const app = express();
 
-app.use(cors());  // Use CORS middleware without any restrictions
+app.use(cors()); 
 app.use(bodyParser.json());
 app.use('/auth', authRoutes);
 app.use(helmet());
