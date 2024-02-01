@@ -1,6 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const sessionStorage = require('sessionstorage');
 const router = express.Router();
 
 
@@ -9,7 +10,9 @@ router.post('/login', (req, res) => {
 
   if (isValidUser(email, password)) {
     const token = jwt.sign({ email, role: getUserRole(email) }, 'secretKey', { expiresIn: '1h' });
+    sessionStorage.setItem('token', token);
     res.json({ token });
+  
   } else {
     res.status(401).json({ error: 'Invalid login' });
   }
