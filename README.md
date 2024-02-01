@@ -14,7 +14,6 @@ crypto: Modul för kryptografiska funktioner.
 Skapa en routerinstans:
 
 router: Instans av express.Router().
-Använd Helmet-middleware:
 
 Lägger till säkerhetsheaders med Helmet-middleware.
 Definiera autentiseringsruta:

@@ -1,11 +1,8 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const helmet = require('helmet');
 const crypto = require('crypto');
-
 const router = express.Router();
 
-router.use(helmet());
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
